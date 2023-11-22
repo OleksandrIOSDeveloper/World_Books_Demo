@@ -9,36 +9,63 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var pageButton: UILabel!
+    @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var arrayOfBooks = [BookPreview(title: "IRON FLAME", description:"The second book in the Empyrean series. Violet Sorrengail’s next round of training might require her to betray the man she loves.", author: "Rebecca Yarros", imageUrl: "https://storage.googleapis.com/du-prd/books/images/9781649374172.jpg"),BookPreview(title: "RESURRECTION WALK", description:"The seventh book in the Lincoln Lawyer series. Haller and Bosch team up to prove the innocence of a woman in prison for killing her husband.", author: "Michael Connellys", imageUrl: "https://storage.googleapis.com/du-prd/books/images/9780316563765.jpg"),BookPreview(title: "BOOKSHOPS & BONEDUST", description: "In a prequel to “Legends & Lattes,\" an orc who was hurt during a battle winds up in a sleepy beach town called Murk.", author: "Travis Baldree", imageUrl: "https://storage.googleapis.com/du-prd/books/images/9781250886101.jpg"),BookPreview(title: "THE SECRET", description: "The 28th book in the Jack Reacher series. It’s 1992 and Reacher looks into the cause of a string of mysterious deaths.", author: "Lee Child and Andrew Child", imageUrl: "https://storage.googleapis.com/du-prd/books/images/9781984818584.jpg")]
+
+    var bookService = BooksService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        getBooks()
+    }
+    
+    private func setupUI() {
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.reloadData()
-        
-    
+        pageLabel.text = String(bookService.page)
     }
-
+    
+    
+    
     @IBAction func previousButton(_ sender: Any) {
+        bookService.switchPage(isNext: false, completion: {
+            self.updateData()
+        })
     }
     @IBAction func nextButton(_ sender: Any) {
+        bookService.switchPage(isNext: true, completion: {
+            self.updateData()
+        })
     }
     
- 
+    private func updateData() {
+        pageLabel.text = String(bookService.page)
+        tableView.reloadData()
+    }
+    
+    private func getBooks() {
+        bookService.fetchBooks { result in
+            if let error = result {
+                print(error)
+            } else {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayOfBooks.count
+        bookService.booksArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        cell.configure(with: arrayOfBooks[indexPath.row])
+        cell.configure(with: bookService.booksArray[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

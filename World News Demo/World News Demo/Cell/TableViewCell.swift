@@ -18,8 +18,8 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configure(with book: BookPreview){
-        bookImageView.downloaded(from: book.imageUrl)
+    func configure(with book: Book){
+        bookImageView.downloaded(from: book.bookImage)
         titleLabel.text = book.title
         descriptionLabel.text = book.description
         authorLabel.text = book.author

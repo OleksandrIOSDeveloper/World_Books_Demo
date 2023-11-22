@@ -73,7 +73,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pageButton" destination="rbh-4r-Xbv" id="w72-b0-aTF"/>
+                        <outlet property="pageLabel" destination="rbh-4r-Xbv" id="jxW-nb-Ata"/>
                         <outlet property="tableView" destination="yeT-9P-fO1" id="AE6-90-Ebx"/>
                     </connections>
                 </viewController>

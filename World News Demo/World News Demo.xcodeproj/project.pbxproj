@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD793EED2B07C4CB0045CDCF /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD793EEC2B07C4CB0045CDCF /* BookList.swift */; };
 		DD7F18432ABC7A4C004CAF19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */; };
 		DD7F18452ABC7A4C004CAF19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */; };
 		DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18462ABC7A4C004CAF19 /* ViewController.swift */; };
@@ -19,10 +18,11 @@
 		DD905C9E2B0D174800622247 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */; };
 		DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */; };
 		DD905CA32B0E207F00622247 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD905CA22B0E207F00622247 /* Alamofire */; };
+		DD905CA62B0E24BC00622247 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905CA52B0E24BC00622247 /* NetworkManager.swift */; };
+		DD905CA92B0E36DD00622247 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905CA82B0E36DD00622247 /* BookService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD793EEC2B07C4CB0045CDCF /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		DD7F183F2ABC7A4C004CAF19 /* World News Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World News Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +35,8 @@
 		DD905C9A2B0D090900622247 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksResponse.swift; sourceTree = "<group>"; };
+		DD905CA52B0E24BC00622247 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DD905CA82B0E36DD00622247 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,6 @@
 		DD793EEB2B07C46A0045CDCF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DD793EEC2B07C4CB0045CDCF /* BookList.swift */,
 				DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */,
 			);
 			path = Models;
@@ -90,6 +91,8 @@
 				DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */,
 				DD7F18462ABC7A4C004CAF19 /* ViewController.swift */,
 				DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */,
+				DD905CA72B0E36A400622247 /* Services */,
+				DD905CA42B0E247500622247 /* Managers */,
 				DD793EEB2B07C46A0045CDCF /* Models */,
 				DD793EE62B07B6470045CDCF /* Cell */,
 				DD7F18482ABC7A4C004CAF19 /* Main.storyboard */,
@@ -98,6 +101,22 @@
 				DD7F18502ABC7A4E004CAF19 /* Info.plist */,
 			);
 			path = "World News Demo";
+			sourceTree = "<group>";
+		};
+		DD905CA42B0E247500622247 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DD905CA52B0E24BC00622247 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DD905CA72B0E36A400622247 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DD905CA82B0E36DD00622247 /* BookService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +201,8 @@
 				DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */,
 				DD905C9E2B0D174800622247 /* UIImageViewExtension.swift in Sources */,
 				DD7F18432ABC7A4C004CAF19 /* AppDelegate.swift in Sources */,
-				DD793EED2B07C4CB0045CDCF /* BookList.swift in Sources */,
+				DD905CA92B0E36DD00622247 /* BookService.swift in Sources */,
+				DD905CA62B0E24BC00622247 /* NetworkManager.swift in Sources */,
 				DD905C9B2B0D090900622247 /* TableViewCell.swift in Sources */,
 				DD7F18452ABC7A4C004CAF19 /* SceneDelegate.swift in Sources */,
 			);
