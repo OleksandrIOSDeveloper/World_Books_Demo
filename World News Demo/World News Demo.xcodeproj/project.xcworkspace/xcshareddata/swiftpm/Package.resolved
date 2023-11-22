@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "827a879ae2dcc473dfcae8ae188b992f66cd07d6"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD793EED2B07C4CB0045CDCF /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD793EEC2B07C4CB0045CDCF /* BookList.swift */; };
 		DD7F18432ABC7A4C004CAF19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */; };
 		DD7F18452ABC7A4C004CAF19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */; };
 		DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18462ABC7A4C004CAF19 /* ViewController.swift */; };
 		DD7F184A2ABC7A4C004CAF19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7F18482ABC7A4C004CAF19 /* Main.storyboard */; };
 		DD7F184C2ABC7A4E004CAF19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7F184B2ABC7A4E004CAF19 /* Assets.xcassets */; };
 		DD7F184F2ABC7A4E004CAF19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7F184D2ABC7A4E004CAF19 /* LaunchScreen.storyboard */; };
+		DD905C9B2B0D090900622247 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905C992B0D090900622247 /* TableViewCell.swift */; };
+		DD905C9C2B0D090900622247 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD905C9A2B0D090900622247 /* TableViewCell.xib */; };
+		DD905C9E2B0D174800622247 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */; };
+		DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */; };
+		DD905CA32B0E207F00622247 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD905CA22B0E207F00622247 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD793EEC2B07C4CB0045CDCF /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		DD7F183F2ABC7A4C004CAF19 /* World News Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World News Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,10 @@
 		DD7F184B2ABC7A4E004CAF19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD7F184E2ABC7A4E004CAF19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD7F18502ABC7A4E004CAF19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD905C992B0D090900622247 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DD905C9A2B0D090900622247 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +42,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD905CA32B0E207F00622247 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD793EE62B07B6470045CDCF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DD905C992B0D090900622247 /* TableViewCell.swift */,
+				DD905C9A2B0D090900622247 /* TableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DD793EEB2B07C46A0045CDCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD793EEC2B07C4CB0045CDCF /* BookList.swift */,
+				DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DD7F18362ABC7A4C004CAF19 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +89,9 @@
 				DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */,
 				DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */,
 				DD7F18462ABC7A4C004CAF19 /* ViewController.swift */,
+				DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */,
+				DD793EEB2B07C46A0045CDCF /* Models */,
+				DD793EE62B07B6470045CDCF /* Cell */,
 				DD7F18482ABC7A4C004CAF19 /* Main.storyboard */,
 				DD7F184B2ABC7A4E004CAF19 /* Assets.xcassets */,
 				DD7F184D2ABC7A4E004CAF19 /* LaunchScreen.storyboard */,
@@ -83,6 +116,9 @@
 			dependencies = (
 			);
 			name = "World News Demo";
+			packageProductDependencies = (
+				DD905CA22B0E207F00622247 /* Alamofire */,
+			);
 			productName = "World News Demo";
 			productReference = DD7F183F2ABC7A4C004CAF19 /* World News Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +147,9 @@
 				Base,
 			);
 			mainGroup = DD7F18362ABC7A4C004CAF19;
+			packageReferences = (
+				DD905CA12B0E207F00622247 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = DD7F18402ABC7A4C004CAF19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7F184F2ABC7A4E004CAF19 /* LaunchScreen.storyboard in Resources */,
+				DD905C9C2B0D090900622247 /* TableViewCell.xib in Resources */,
 				DD7F184C2ABC7A4E004CAF19 /* Assets.xcassets in Resources */,
 				DD7F184A2ABC7A4C004CAF19 /* Main.storyboard in Resources */,
 			);
@@ -139,7 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */,
+				DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */,
+				DD905C9E2B0D174800622247 /* UIImageViewExtension.swift in Sources */,
 				DD7F18432ABC7A4C004CAF19 /* AppDelegate.swift in Sources */,
+				DD793EED2B07C4CB0045CDCF /* BookList.swift in Sources */,
+				DD905C9B2B0D090900622247 /* TableViewCell.swift in Sources */,
 				DD7F18452ABC7A4C004CAF19 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD905CA12B0E207F00622247 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD905CA22B0E207F00622247 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD905CA12B0E207F00622247 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD7F18372ABC7A4C004CAF19 /* Project object */;
 }
