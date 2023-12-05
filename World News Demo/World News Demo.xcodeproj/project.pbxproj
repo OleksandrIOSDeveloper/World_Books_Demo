@@ -20,6 +20,7 @@
 		DD905CA32B0E207F00622247 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD905CA22B0E207F00622247 /* Alamofire */; };
 		DD905CA62B0E24BC00622247 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905CA52B0E24BC00622247 /* NetworkManager.swift */; };
 		DD905CA92B0E36DD00622247 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905CA82B0E36DD00622247 /* BookService.swift */; };
+		DDE83A9C2B1F292A0077F279 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksResponse.swift; sourceTree = "<group>"; };
 		DD905CA52B0E24BC00622247 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD905CA82B0E36DD00622247 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
+		DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */,
 				DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */,
 				DD7F18462ABC7A4C004CAF19 /* ViewController.swift */,
+				DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */,
 				DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */,
 				DD905CA72B0E36A400622247 /* Services */,
 				DD905CA42B0E247500622247 /* Managers */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDE83A9C2B1F292A0077F279 /* DetailViewController.swift in Sources */,
 				DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */,
 				DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */,
 				DD905C9E2B0D174800622247 /* UIImageViewExtension.swift in Sources */,
