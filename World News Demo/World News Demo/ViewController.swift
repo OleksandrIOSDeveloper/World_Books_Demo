@@ -75,10 +75,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         viewController.book = bookService.booksArray[indexPath.row]
-//        viewController.bookImageView.downloaded(from: <#T##URL#>)
-//        viewController.titleBookName = bookService.booksArray[indexPath.row].title
-//        viewController.authorBook = bookService.booksArray[indexPath.row].author
-//        viewController.discriptionBook = bookService.booksArray[indexPath.row].description
          self.present(viewController, animated: true)
         
     }

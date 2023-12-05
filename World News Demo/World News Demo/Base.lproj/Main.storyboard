@@ -124,19 +124,37 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCE-Mw-V9m">
-                                <rect key="frame" x="22" y="386" width="355" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can buy the book here:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-0e-lUE">
+                                <rect key="frame" x="15" y="344" width="260" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="IOE-9N-Gkt"/>
+                                    <constraint firstAttribute="height" constant="50" id="war-Wk-j69"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCE-Mw-V9m">
+                                <rect key="frame" x="280" y="337" width="108" height="65"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="qlZ-DS-Oft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="buy book!!!">
+                                    <color key="titleColor" systemColor="systemGrayColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="buyBookButton:" destination="7LE-sy-anh" eventType="touchUpInside" id="4aD-gb-Eif"/>
+                                    <action selector="buyBookButton:" destination="7LE-sy-anh" eventType="touchUpInside" id="hRe-1N-Rin"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5aL-Qn-QMs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aVi-0e-lUE" firstAttribute="top" secondItem="Djz-SS-l4J" secondAttribute="bottom" constant="5" id="0xH-zF-GFQ"/>
                             <constraint firstItem="Djz-SS-l4J" firstAttribute="leading" secondItem="5aL-Qn-QMs" secondAttribute="leading" constant="15" id="454-hW-pM9"/>
                             <constraint firstItem="2f1-ke-diM" firstAttribute="top" secondItem="aBs-ZU-BEn" secondAttribute="bottom" constant="5" id="459-d2-ZiP"/>
                             <constraint firstItem="Djz-SS-l4J" firstAttribute="top" secondItem="J51-mu-1nM" secondAttribute="bottom" constant="5" id="9xn-B2-DmV"/>
@@ -144,15 +162,21 @@
                             <constraint firstItem="5aL-Qn-QMs" firstAttribute="trailing" secondItem="Djz-SS-l4J" secondAttribute="trailing" constant="15" id="CR8-Rc-XWn"/>
                             <constraint firstItem="aBs-ZU-BEn" firstAttribute="leading" secondItem="J51-mu-1nM" secondAttribute="trailing" constant="5" id="E0Y-fA-bva"/>
                             <constraint firstItem="aBs-ZU-BEn" firstAttribute="top" secondItem="5aL-Qn-QMs" secondAttribute="top" constant="25" id="G1J-kg-cMm"/>
+                            <constraint firstItem="dCE-Mw-V9m" firstAttribute="leading" secondItem="aVi-0e-lUE" secondAttribute="trailing" constant="5" id="OBW-Ib-zP0"/>
                             <constraint firstItem="J51-mu-1nM" firstAttribute="top" secondItem="5aL-Qn-QMs" secondAttribute="top" constant="15" id="RqY-iO-Xa5"/>
+                            <constraint firstItem="dCE-Mw-V9m" firstAttribute="top" secondItem="Djz-SS-l4J" secondAttribute="bottom" constant="-2" id="fiO-rx-nMb"/>
+                            <constraint firstItem="aVi-0e-lUE" firstAttribute="leading" secondItem="5aL-Qn-QMs" secondAttribute="leading" constant="15" id="flJ-or-i07"/>
                             <constraint firstItem="5aL-Qn-QMs" firstAttribute="trailing" secondItem="aBs-ZU-BEn" secondAttribute="trailing" constant="5" id="sNq-oC-eJ4"/>
                             <constraint firstItem="2f1-ke-diM" firstAttribute="leading" secondItem="J51-mu-1nM" secondAttribute="trailing" constant="5" id="txs-Iw-itz"/>
+                            <constraint firstItem="5aL-Qn-QMs" firstAttribute="trailing" secondItem="dCE-Mw-V9m" secondAttribute="trailing" constant="5" id="yN8-NN-PuJ"/>
                             <constraint firstItem="5aL-Qn-QMs" firstAttribute="trailing" secondItem="2f1-ke-diM" secondAttribute="trailing" constant="5" id="yru-uf-Kpj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="authorBookLabel" destination="2f1-ke-diM" id="T6k-dU-Jcp"/>
                         <outlet property="bookImageView" destination="J51-mu-1nM" id="83h-B3-KJQ"/>
+                        <outlet property="buyBookButtonOutlet" destination="dCE-Mw-V9m" id="6J3-Q5-gir"/>
+                        <outlet property="buyBookNowLabel" destination="aVi-0e-lUE" id="R4g-5j-QRz"/>
                         <outlet property="centralLabel" destination="aBs-ZU-BEn" id="IW0-jl-XrN"/>
                         <outlet property="discriptionBookLabel" destination="Djz-SS-l4J" id="mR8-59-LkA"/>
                     </connections>
@@ -161,6 +185,40 @@
             </objects>
             <point key="canvasLocation" x="809.92366412213732" y="-2.1126760563380285"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="pOg-kB-k01">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="2eE-BX-cfI" customClass="WebViewController" customModule="World_News_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yoe-4K-Wq4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypI-c3-GRC">
+                                <rect key="frame" x="0.0" y="69" width="393" height="749"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T4X-ZB-fUC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ypI-c3-GRC" firstAttribute="leading" secondItem="T4X-ZB-fUC" secondAttribute="leading" id="5h7-YO-giw"/>
+                            <constraint firstItem="T4X-ZB-fUC" firstAttribute="bottom" secondItem="ypI-c3-GRC" secondAttribute="bottom" id="CK3-tO-m3w"/>
+                            <constraint firstItem="T4X-ZB-fUC" firstAttribute="trailing" secondItem="ypI-c3-GRC" secondAttribute="trailing" id="MQI-kN-A7R"/>
+                            <constraint firstItem="ypI-c3-GRC" firstAttribute="top" secondItem="T4X-ZB-fUC" secondAttribute="top" constant="10" id="fRt-L0-9ir"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="ypI-c3-GRC" id="6XP-cM-e9a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJL-Vz-h9M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576" y="-2"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="secondaryLabelColor">
@@ -168,6 +226,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
