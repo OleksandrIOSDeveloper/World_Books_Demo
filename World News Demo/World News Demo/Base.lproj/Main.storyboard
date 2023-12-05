@@ -147,7 +147,7 @@
                                     <color key="titleColor" systemColor="systemGrayColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="buyBookButton:" destination="7LE-sy-anh" eventType="touchUpInside" id="hRe-1N-Rin"/>
+                                    <action selector="downloadSheetWithSender:" destination="7LE-sy-anh" eventType="touchUpInside" id="Zbj-mi-4cQ"/>
                                 </connections>
                             </button>
                         </subviews>
