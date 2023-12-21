@@ -8,10 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
+    
     var bookService = BooksService()
     
     override func viewDidLoad() {
@@ -63,19 +63,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         bookService.booksArray.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         cell.configure(with: bookService.booksArray[indexPath.row])
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190 // Замените это значение на ваше желаемое значение высоты
+        return 190 
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         viewController.book = bookService.booksArray[indexPath.row]
-         self.present(viewController, animated: true)
-        
+        self.present(viewController, animated: true)
     }
 }

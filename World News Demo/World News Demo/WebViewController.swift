@@ -11,14 +11,14 @@ import WebKit
 class WebViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
+    
     var bookUrl: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let myUrl = URL(string: bookUrl) else { return }
         let myRequest = URLRequest(url: myUrl)
-            webView.load(myRequest)
+        webView.load(myRequest)
     }
-    
-    
     
 }

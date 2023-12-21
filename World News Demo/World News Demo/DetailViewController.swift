@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var buyBookButtonOutlet: UIButton!
     
     var book: Book?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buyBookButtonOutlet.layer.cornerRadius = 18
@@ -30,51 +31,41 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
     @IBAction func downloadSheet(sender: AnyObject) {
         // create an actionSheet
         let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // create an action
-        let firstAction: UIAlertAction = UIAlertAction(title: "Buy a book on Amazon", style: .default) { action -> Void in
-            
-            print("First Action pressed")
+        let firstAction: UIAlertAction = UIAlertAction(title: "Buy a book on \(self.book?.buyLinks[0].name.rawValue ?? "")", style: .default) { action -> Void in
+            self.openWebView(urlString: self.book?.buyLinks[0].url ?? "https://example.com/default")
         }
         
-        let secondAction: UIAlertAction = UIAlertAction(title: "Buy a book on Apple Books", style: .default) { action -> Void in
-            
-            print("Second Action pressed")
+        let secondAction: UIAlertAction = UIAlertAction(title: "Buy a book on \(self.book?.buyLinks[1].name.rawValue ?? "")", style: .default) { action -> Void in
+            self.openWebView(urlString: self.book?.buyLinks[1].url ?? "https://example.com/default")
         }
         
-        let thirdAction: UIAlertAction = UIAlertAction(title: "Buy a book on Barnes and Noble", style: .default) { action -> Void in
-            
-            print("Third Action pressed")
+        let thirdAction: UIAlertAction = UIAlertAction(title: "Buy a book on \(self.book?.buyLinks[2].name.rawValue ?? "")", style: .default) { action -> Void in
+            self.openWebView(urlString: self.book?.buyLinks[2].url ?? "https://example.com/default")
         }
+        
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
-        
+    
         // add actions
         actionSheetController.addAction(firstAction)
         actionSheetController.addAction(secondAction)
         actionSheetController.addAction(thirdAction)
         actionSheetController.addAction(cancelAction)
-        
-        
-        // present an actionSheet...
-        // present(actionSheetController, animated: true, completion: nil)   // doesn't work for iPad
-        
-            //   actionSheetController.popoverPresentationController?.sourceView = yourSourceViewName // works for both iPhone & iPad
-        
+    
         present(actionSheetController, animated: true) {
             print("option menu presented")
-            
         }
     }
-//    @IBAction func buyBookButton(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-//        vc.bookUrl = book?.amazonProductURL ?? "https://example.com/default"
-//         self.present(vc, animated: true)
-//    }
-//
-//
+    
+    private func openWebView(urlString: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.bookUrl = urlString
+        self.present(vc, animated: true)
+    }
+    
 }
