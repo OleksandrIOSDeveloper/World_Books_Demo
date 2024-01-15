@@ -21,4 +21,8 @@ class WebViewController: UIViewController {
         webView.load(myRequest)
     }
     
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

@@ -13,7 +13,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var centralLabel: UILabel!
     @IBOutlet weak var authorBookLabel: UILabel!
     @IBOutlet weak var discriptionBookLabel: UILabel!
-    @IBOutlet weak var buyBookNowLabel: UILabel!
     @IBOutlet weak var buyBookButtonOutlet: UIButton!
     
     var book: Book?
@@ -29,6 +28,10 @@ class DetailViewController: UIViewController {
         } else {
             print("Book is nil")
         }
+    }
+    
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func downloadSheet(sender: AnyObject) {
@@ -49,13 +52,13 @@ class DetailViewController: UIViewController {
         }
         
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
-    
+        
         // add actions
         actionSheetController.addAction(firstAction)
         actionSheetController.addAction(secondAction)
         actionSheetController.addAction(thirdAction)
         actionSheetController.addAction(cancelAction)
-    
+        
         present(actionSheetController, animated: true) {
             print("option menu presented")
         }
