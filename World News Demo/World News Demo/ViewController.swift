@@ -11,11 +11,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameListLabel: UILabel!
     
     var bookService = BooksService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateData()
         setupUI()
         getBooks()
     }
@@ -26,9 +28,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         pageLabel.text = String(bookService.page)
+        nameListLabel.text = bookService.nameList
     }
-    
-    
     
     @IBAction func previousButton(_ sender: Any) {
         bookService.switchPage(isNext: false, completion: {
@@ -41,8 +42,11 @@ class ViewController: UIViewController {
         })
     }
     
+   
+    
     private func updateData() {
         pageLabel.text = String(bookService.page)
+        nameListLabel.text = bookService.nameList
         tableView.reloadData()
     }
     
@@ -55,7 +59,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
     
 }
 
@@ -71,7 +74,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190 
+        return 205
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

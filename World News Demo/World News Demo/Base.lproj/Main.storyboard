@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="49R-nn-bqU">
-                                <rect key="frame" x="20" y="59" width="353" height="40"/>
+                                <rect key="frame" x="20" y="99" width="353" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBl-HV-6fS">
                                         <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="40"/>
@@ -75,17 +75,31 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yeT-9P-fO1">
-                                <rect key="frame" x="0.0" y="114" width="393" height="704"/>
+                                <rect key="frame" x="0.0" y="154" width="393" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebX-S5-dAC">
+                                <rect key="frame" x="20" y="59" width="353" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KoC-Rq-fdx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="49R-nn-bqU" secondAttribute="top" id="0TU-Cg-8zA"/>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="top" secondItem="49R-nn-bqU" secondAttribute="bottom" constant="15" id="34Q-KX-uxT"/>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5t7-vJ-hj0"/>
+                            <constraint firstItem="49R-nn-bqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="6Di-lv-cHB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="49R-nn-bqU" secondAttribute="trailing" constant="20" id="Z0w-fr-VQV"/>
+                            <constraint firstItem="ebX-S5-dAC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dq1-zC-Jcp"/>
+                            <constraint firstItem="ebX-S5-dAC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j4t-2t-RqW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ebX-S5-dAC" secondAttribute="trailing" constant="20" id="lha-VM-pUN"/>
                             <constraint firstItem="49R-nn-bqU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="o9H-CO-2ym"/>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yTf-BX-58t"/>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zv2-aH-IOz"/>
@@ -93,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="q4M-Mv-NaU"/>
                     <connections>
+                        <outlet property="nameListLabel" destination="ebX-S5-dAC" id="HSu-xQ-Hdb"/>
                         <outlet property="pageLabel" destination="rbh-4r-Xbv" id="jxW-nb-Ata"/>
                         <outlet property="tableView" destination="yeT-9P-fO1" id="AE6-90-Ebx"/>
                     </connections>
@@ -115,7 +130,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label jhCJhhCKLhzcv\" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2f1-ke-diM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2f1-ke-diM">
                                 <rect key="frame" x="180" y="160.33333333333334" width="193" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="S8a-1Q-Wwr"/>
@@ -236,19 +251,8 @@
                                     <constraint firstAttribute="height" constant="40" id="5Xd-R3-k5c"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Book store" id="T2P-zD-vrq">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="W8r-ZE-7ZL">
-                                            <imageReference key="image" image="chevron.backward" catalog="system" renderingMode="hierarchical-single">
-                                                <hierarchicalColors>
-                                                    <color white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color systemColor="secondaryLabelColor"/>
-                                                    <color systemColor="tertiaryLabelColor"/>
-                                                </hierarchicalColors>
-                                            </imageReference>
-                                            <connections>
-                                                <action selector="backButton:" destination="2eE-BX-cfI" id="t8f-S2-DIh"/>
-                                            </connections>
-                                        </barButtonItem>
+                                    <navigationItem title="Title" id="T2P-zD-vrq">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="W8r-ZE-7ZL"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
