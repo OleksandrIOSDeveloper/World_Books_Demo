@@ -18,19 +18,25 @@ class BooksService {
 
     func switchPage(isNext: Bool, completion: () -> Void) {
         if isNext {
-            if page < listsArray.count {
+            if page < listsArray.count - 1 { // Последняя страница имеет индекс listsArray.count - 1
                 page += 1
-                self.booksArray = self.listsArray[page].books
                 self.nameList = self.listsArray[page].listName
-                
-                
-            } // else: handle the case when you're already at the last page
+                self.booksArray = self.listsArray[page].books
+            }  else {
+                page = 0
+                self.nameList = self.listsArray[page].listName
+                self.booksArray = self.listsArray[page].books
+            }
         } else {
             if page > 0 {
                 page -= 1
-                self.booksArray = self.listsArray[page].books
                 self.nameList = self.listsArray[page].listName
-            } // else: handle the case when you're already at the first page
+                self.booksArray = self.listsArray[page].books
+            }  else {
+                page = listsArray.count - 1
+                self.nameList = self.listsArray[page].listName
+                self.booksArray = self.listsArray[page].books
+            }
         }
         completion()
     }

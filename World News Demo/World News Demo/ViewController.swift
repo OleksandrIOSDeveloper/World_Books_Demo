@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateData()
         setupUI()
         getBooks()
     }
@@ -41,8 +40,18 @@ class ViewController: UIViewController {
             self.updateData()
         })
     }
-    
-   
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        sender.direction = .right
+        bookService.switchPage(isNext: true, completion: {
+              self.updateData()
+          })
+    }
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        sender.direction = .left
+        bookService.switchPage(isNext: false, completion: {
+            self.updateData()
+        })
+    }
     
     private func updateData() {
         pageLabel.text = String(bookService.page)
@@ -56,6 +65,7 @@ class ViewController: UIViewController {
                 print(error)
             } else {
                 self.tableView.reloadData()
+                self.nameListLabel.text = self.bookService.nameList
             }
         }
     }
