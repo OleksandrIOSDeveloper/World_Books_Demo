@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameListLabel: UILabel!
     
@@ -26,7 +25,6 @@ class ViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        pageLabel.text = String(bookService.page)
         nameListLabel.text = bookService.nameList
     }
     
@@ -35,26 +33,28 @@ class ViewController: UIViewController {
             self.updateData()
         })
     }
+    
     @IBAction func nextButton(_ sender: Any) {
         bookService.switchPage(isNext: true, completion: {
             self.updateData()
         })
     }
+    
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         sender.direction = .right
-        bookService.switchPage(isNext: true, completion: {
+        bookService.switchPage(isNext: false, completion: {
               self.updateData()
           })
     }
+    
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
         sender.direction = .left
-        bookService.switchPage(isNext: false, completion: {
+        bookService.switchPage(isNext: true, completion: {
             self.updateData()
         })
     }
     
     private func updateData() {
-        pageLabel.text = String(bookService.page)
         nameListLabel.text = bookService.nameList
         tableView.reloadData()
     }

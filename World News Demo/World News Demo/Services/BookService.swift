@@ -20,24 +20,18 @@ class BooksService {
         if isNext {
             if page < listsArray.count - 1 { // Последняя страница имеет индекс listsArray.count - 1
                 page += 1
-                self.nameList = self.listsArray[page].listName
-                self.booksArray = self.listsArray[page].books
             }  else {
                 page = 0
-                self.nameList = self.listsArray[page].listName
-                self.booksArray = self.listsArray[page].books
             }
         } else {
             if page > 0 {
                 page -= 1
-                self.nameList = self.listsArray[page].listName
-                self.booksArray = self.listsArray[page].books
             }  else {
                 page = listsArray.count - 1
-                self.nameList = self.listsArray[page].listName
-                self.booksArray = self.listsArray[page].books
             }
         }
+        self.nameList = self.listsArray[page].listName
+        self.booksArray = self.listsArray[page].books
         completion()
     }
     

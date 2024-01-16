@@ -22,7 +22,7 @@
                                 <rect key="frame" x="20" y="99" width="353" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBl-HV-6fS">
-                                        <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="175.33333333333334" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -36,25 +36,8 @@
                                             <action selector="previousButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8m-F0-ubs"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-4r-Xbv">
-                                        <rect key="frame" x="154.66666666666666" y="0.0" width="50" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="jcF-Xq-qGC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-ko-zwQ">
-                                        <rect key="frame" x="214.66666666666663" y="0.0" width="138.33333333333337" height="40"/>
+                                        <rect key="frame" x="185.33333333333337" y="0.0" width="167.66666666666663" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -119,7 +102,6 @@
                     <navigationItem key="navigationItem" id="q4M-Mv-NaU"/>
                     <connections>
                         <outlet property="nameListLabel" destination="ebX-S5-dAC" id="HSu-xQ-Hdb"/>
-                        <outlet property="pageLabel" destination="rbh-4r-Xbv" id="jxW-nb-Ata"/>
                         <outlet property="tableView" destination="yeT-9P-fO1" id="AE6-90-Ebx"/>
                     </connections>
                 </viewController>
