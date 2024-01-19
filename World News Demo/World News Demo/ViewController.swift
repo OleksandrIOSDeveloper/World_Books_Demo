@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameListLabel: UILabel!
     
     var bookService = BooksService()
+    var isSavedBooks = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,11 @@ class ViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        nameListLabel.text = bookService.nameList
+        nameListLabel.text = isSavedBooks ? "Saved Books" : bookService.nameList
+    }
+    
+    private func updateUI() {
+        nameListLabel.text = isSavedBooks ? "Saved Books" : bookService.nameList
     }
     
     @IBAction func previousButton(_ sender: Any) {
