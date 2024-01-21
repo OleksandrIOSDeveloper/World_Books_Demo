@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameListLabel: UILabel!
+    @IBOutlet var buttonStackVIewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var buttonStackView: UIStackView!
     
     var bookService = BooksService()
     var isSavedBooks = false
@@ -22,15 +24,19 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
+        
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
+        
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
         nameListLabel.text = isSavedBooks ? "Saved Books" : bookService.nameList
-    }
-    
-    private func updateUI() {
-        nameListLabel.text = isSavedBooks ? "Saved Books" : bookService.nameList
+//        buttonStackView.isHidden = isSavedBooks ? true : false
+//        buttonStackVIewHeightConstraint.constant = isSavedBooks ? 0 : buttonStackVIewHeightConstraint.constant
+//        if isSavedBooks == true {
+//            buttonStackView.isHidden = true
+//            buttonStackVIewHeightConstraint.constant = 0
+//        }
     }
     
     @IBAction func previousButton(_ sender: Any) {
@@ -60,7 +66,7 @@ class ViewController: UIViewController {
     }
     
     private func updateData() {
-        nameListLabel.text = bookService.nameList
+        nameListLabel.text = isSavedBooks ? "Saved Books" : bookService.nameList
         tableView.reloadData()
     }
     
@@ -70,16 +76,16 @@ class ViewController: UIViewController {
                 print(error)
             } else {
                 self.tableView.reloadData()
-                self.nameListLabel.text = self.bookService.nameList
+                self.nameListLabel.text = self.isSavedBooks ? "Saved Books" : self.bookService.nameList
             }
         }
     }
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         bookService.booksArray.count
+       // isSavedBooks ? "coredata" : bookService.booksArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

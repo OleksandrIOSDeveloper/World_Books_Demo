@@ -10,25 +10,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="X4H-Yx-lOM">
             <objects>
-                <tabBarController id="Stj-Ka-ATf" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NcP-20-ajo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="Stj-Ka-ATf" customClass="MainTabBarController" customModule="World_News_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tr2-9W-sGw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Veg-5a-Izu"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="xI7-C6-MNt"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="uqX-VL-d8u"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="hRs-zh-Pdd"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NcP-20-ajo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-821" y="-2"/>
+            <point key="canvasLocation" x="-927" y="-2"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="World_News_Demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,9 +117,15 @@
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zv2-aH-IOz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="c5D-22-NvE"/>
+                    <tabBarItem key="tabBarItem" title="" springLoaded="YES" systemItem="contacts" id="48b-Cg-1RA">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="q4M-Mv-NaU"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonStackVIewHeightConstraint" destination="zIB-5V-pe8" id="OMk-ca-zPt"/>
+                        <outlet property="buttonStackView" destination="49R-nn-bqU" id="Ylw-tM-1lN"/>
                         <outlet property="nameListLabel" destination="ebX-S5-dAC" id="HSu-xQ-Hdb"/>
                         <outlet property="tableView" destination="yeT-9P-fO1" id="AE6-90-Ebx"/>
                     </connections>
@@ -309,11 +315,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJL-Vz-h9M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576" y="-2"/>
+            <point key="canvasLocation" x="1537" y="-2"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Veg-5a-Izu"/>
+        <segue reference="hRs-zh-Pdd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD69A2D42B5AA719003959D6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */; };
 		DD7F18432ABC7A4C004CAF19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */; };
 		DD7F18452ABC7A4C004CAF19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */; };
 		DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18462ABC7A4C004CAF19 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DD7F183F2ABC7A4C004CAF19 /* World News Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World News Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		DD7F18412ABC7A4C004CAF19 /* World News Demo */ = {
 			isa = PBXGroup;
 			children = (
+				DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */,
 				DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */,
 				DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */,
 				DD7F18462ABC7A4C004CAF19 /* ViewController.swift */,
@@ -205,6 +208,7 @@
 			files = (
 				DDE83A9C2B1F292A0077F279 /* DetailViewController.swift in Sources */,
 				DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */,
+				DD69A2D42B5AA719003959D6 /* MainTabBarController.swift in Sources */,
 				DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */,
 				DDE83A9E2B1F808E0077F279 /* WebViewController.swift in Sources */,
 				DD905C9E2B0D174800622247 /* UIImageViewExtension.swift in Sources */,
