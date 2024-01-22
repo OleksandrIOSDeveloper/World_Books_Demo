@@ -26,17 +26,12 @@ class ViewController: UIViewController {
     private func setupUI() {
         
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
-        
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
         nameListLabel.text = isSavedBooks ? "Saved Books" : bookService.nameList
-//        buttonStackView.isHidden = isSavedBooks ? true : false
-//        buttonStackVIewHeightConstraint.constant = isSavedBooks ? 0 : buttonStackVIewHeightConstraint.constant
-//        if isSavedBooks == true {
-//            buttonStackView.isHidden = true
-//            buttonStackVIewHeightConstraint.constant = 0
-//        }
+        buttonStackView.isHidden = isSavedBooks ? true : false
+        buttonStackVIewHeightConstraint.constant = isSavedBooks ? 0 : 40
     }
     
     @IBAction func previousButton(_ sender: Any) {

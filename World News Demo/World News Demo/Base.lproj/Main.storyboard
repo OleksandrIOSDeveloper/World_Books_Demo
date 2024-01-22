@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Stj-Ka-ATf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XDP-gr-Xze">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,22 +11,53 @@
     </dependencies>
     <scenes>
         <!--Main Tab Bar Controller-->
-        <scene sceneID="X4H-Yx-lOM">
+        <scene sceneID="xti-a1-7p2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NcP-20-ajo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tabBarController id="Stj-Ka-ATf" customClass="MainTabBarController" customModule="World_News_Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tr2-9W-sGw">
+                <tabBarController id="XDP-gr-Xze" customClass="MainTabBarController" customModule="World_News_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XsF-Rx-KDl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="uqX-VL-d8u"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="hRs-zh-Pdd"/>
+                        <segue destination="QhU-nq-z6a" kind="relationship" relationship="viewControllers" id="kCx-zI-4M0"/>
+                        <segue destination="Qha-9d-bAe" kind="relationship" relationship="viewControllers" id="A1b-R5-IKY"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fv1-h6-dvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-927" y="-2"/>
+            <point key="canvasLocation" x="-1697" y="-2"/>
+        </scene>
+        <!--Saved book-->
+        <scene sceneID="yen-r8-1PP">
+            <objects>
+                <navigationController id="Qha-9d-bAe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved book" image="bookmark.square.fill" catalog="system" id="sxv-iE-1Hf"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="XLI-YK-gcd">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMp-VR-HZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781" y="292"/>
+        </scene>
+        <!--Book-->
+        <scene sceneID="boN-1n-QOr">
+            <objects>
+                <navigationController id="QhU-nq-z6a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Book" id="Hvv-bC-yfg">
+                        <imageReference key="image" image="book.fill" catalog="system" variableValue="0.0"/>
+                        <color key="badgeColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="o7M-sP-dPZ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nET-4v-hXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-782" y="-398"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -37,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="49R-nn-bqU">
-                                <rect key="frame" x="20" y="99" width="353" height="40"/>
+                                <rect key="frame" x="20" y="109" width="353" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBl-HV-6fS">
                                         <rect key="frame" x="0.0" y="0.0" width="175.33333333333334" height="40"/>
@@ -76,7 +107,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yeT-9P-fO1">
-                                <rect key="frame" x="0.0" y="154" width="393" height="615"/>
+                                <rect key="frame" x="0.0" y="164" width="393" height="605"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -85,7 +116,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebX-S5-dAC">
-                                <rect key="frame" x="20" y="59" width="353" height="35"/>
+                                <rect key="frame" x="20" y="64" width="353" height="35"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -107,19 +138,16 @@
                         <constraints>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="top" secondItem="49R-nn-bqU" secondAttribute="bottom" constant="15" id="34Q-KX-uxT"/>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5t7-vJ-hj0"/>
-                            <constraint firstItem="49R-nn-bqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="6Di-lv-cHB"/>
+                            <constraint firstItem="49R-nn-bqU" firstAttribute="top" secondItem="ebX-S5-dAC" secondAttribute="bottom" constant="10" id="6Di-lv-cHB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="49R-nn-bqU" secondAttribute="trailing" constant="20" id="Z0w-fr-VQV"/>
                             <constraint firstItem="ebX-S5-dAC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dq1-zC-Jcp"/>
-                            <constraint firstItem="ebX-S5-dAC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j4t-2t-RqW"/>
+                            <constraint firstItem="ebX-S5-dAC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="j4t-2t-RqW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ebX-S5-dAC" secondAttribute="trailing" constant="20" id="lha-VM-pUN"/>
                             <constraint firstItem="49R-nn-bqU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="o9H-CO-2ym"/>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yTf-BX-58t"/>
                             <constraint firstItem="yeT-9P-fO1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zv2-aH-IOz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" springLoaded="YES" systemItem="contacts" id="48b-Cg-1RA">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" id="q4M-Mv-NaU"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -318,10 +346,9 @@
             <point key="canvasLocation" x="1537" y="-2"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="hRs-zh-Pdd"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="bookmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

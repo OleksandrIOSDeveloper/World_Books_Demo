@@ -7,19 +7,48 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-
+class MainTabBarController: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
+        let controllerArray = [initialTabBar, finalTabBar]
+        self.viewControllers = controllerArray
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-            let selectedIndex = tabBarController.selectedIndex
-            print("Выбрана вкладка с индексом: \(selectedIndex)")
-   
-        if let selectedViewController = tabBarController.viewControllers?[1] as? ViewController {
-            selectedViewController.isSavedBooks = true
-               }
+    lazy public var initialTabBar: UIViewController = {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        if let vc = vc as? ViewController {
+            vc.isSavedBooks = false
         }
+        let title = "Books"
+        let defaultImage = UIImage(systemName: "book")
+        let selectedImage = UIImage(systemName: "book.fill")
+        let tabBarItems = (title: title, image: defaultImage, selectedImage: selectedImage)
+        let tabBarItem = UITabBarItem(title: tabBarItems.title, image: tabBarItems.image, selectedImage: tabBarItems.selectedImage)
+        
+        vc.tabBarItem = tabBarItem
+        
+        return vc
+    }()
+    
+    lazy public var finalTabBar: UIViewController = {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController1 = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        
+        guard let vc = viewController1 as? ViewController else { return UIViewController() }
+        vc.isSavedBooks = true
+        
+        let defaultImage = UIImage(systemName: "bookmark.square")
+        let selectedImage = UIImage(systemName: "bookmark.square.fill")
+        let tabBarItem = UITabBarItem(title: "Saved", image: defaultImage, selectedImage: selectedImage)
+        
+        vc.tabBarItem = tabBarItem
+        
+        return vc
+    }()
+    
 }
+
