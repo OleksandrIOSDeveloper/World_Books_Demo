@@ -16,15 +16,22 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var buyBookButtonOutlet: UIButton!
     
     var book: Book?
+    var savedBook: BookEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buyBookButtonOutlet.layer.cornerRadius = 7
-        if let unwrappedBook = book{
+        if let unwrappedBook = book {
             bookImageView.downloaded(from: unwrappedBook.bookImage)
             centralLabel.text = unwrappedBook.title
             authorBookLabel.text = unwrappedBook.author
             discriptionBookLabel.text = unwrappedBook.description
+        } else if let unwrappedBook = savedBook {
+            bookImageView.downloaded(from: unwrappedBook.image)
+            centralLabel.text = unwrappedBook.title
+            authorBookLabel.text = unwrappedBook.author
+            discriptionBookLabel.text = unwrappedBook.discription
+            buyBookButtonOutlet.isHidden = true
         } else {
             print("Book is nil")
         }

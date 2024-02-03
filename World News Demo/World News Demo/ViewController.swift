@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -16,11 +17,14 @@ class ViewController: UIViewController {
     
     var bookService = BooksService()
     var isSavedBooks = false
+    var coreDataService = CoreDataService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         getBooks()
+        coreDataService.convertToBookEntities(managedObjects: coreDataService.loadSelectedBook())
     }
     
     private func setupUI() {
@@ -49,8 +53,8 @@ class ViewController: UIViewController {
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         sender.direction = .right
         bookService.switchPage(isNext: false, completion: {
-              self.updateData()
-          })
+            self.updateData()
+        })
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
@@ -79,13 +83,23 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        bookService.booksArray.count
-       // isSavedBooks ? "coredata" : bookService.booksArray.count
+        isSavedBooks ? coreDataService.bookEntities.count : bookService.booksArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        cell.configure(with: bookService.booksArray[indexPath.row])
+        if isSavedBooks {
+            cell.configureSaved(with: coreDataService.bookEntities[indexPath.row])
+        } else {
+            cell.configure(with: bookService.booksArray[indexPath.row])
+        }
+        cell.completion = {
+            self.coreDataService.saveSelectedBook(
+                author: self.bookService.booksArray[indexPath.row].author,
+                discription: self.bookService.booksArray[indexPath.row].description,
+                image: self.bookService.booksArray[indexPath.row].bookImage,
+                title: self.bookService.booksArray[indexPath.row].title)
+        }
         return cell
     }
     
@@ -96,7 +110,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        viewController.book = bookService.booksArray[indexPath.row]
+        if isSavedBooks {
+            viewController.savedBook = coreDataService.bookEntities[indexPath.row]
+        } else {
+            viewController.book = bookService.booksArray[indexPath.row]
+        }
         self.present(viewController, animated: true)
     }
 }

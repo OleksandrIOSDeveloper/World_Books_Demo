@@ -23,6 +23,9 @@
 		DD905CA92B0E36DD00622247 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD905CA82B0E36DD00622247 /* BookService.swift */; };
 		DDE83A9C2B1F292A0077F279 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */; };
 		DDE83A9E2B1F808E0077F279 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE83A9D2B1F808E0077F279 /* WebViewController.swift */; };
+		DDF0EB7C2B6CF65100689592 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDF0EB7A2B6CF65100689592 /* DataModel.xcdatamodeld */; };
+		DDF0EB7E2B6CF93B00689592 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0EB7D2B6CF93B00689592 /* CoreDataService.swift */; };
+		DDF0EB802B6E4D6600689592 /* BookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0EB7F2B6E4D6600689592 /* BookEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		DD905CA82B0E36DD00622247 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DDE83A9D2B1F808E0077F279 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		DDF0EB7B2B6CF65100689592 /* BookDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDataModel.xcdatamodel; sourceTree = "<group>"; };
+		DDF0EB7D2B6CF93B00689592 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		DDF0EB7F2B6E4D6600689592 /* BookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				DD905C9F2B0E1E3E00622247 /* BooksResponse.swift */,
+				DDF0EB7F2B6E4D6600689592 /* BookEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +115,7 @@
 				DD7F184B2ABC7A4E004CAF19 /* Assets.xcassets */,
 				DD7F184D2ABC7A4E004CAF19 /* LaunchScreen.storyboard */,
 				DD7F18502ABC7A4E004CAF19 /* Info.plist */,
+				DDF0EB7A2B6CF65100689592 /* DataModel.xcdatamodeld */,
 			);
 			path = "World News Demo";
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				DD905CA82B0E36DD00622247 /* BookService.swift */,
+				DDF0EB7D2B6CF93B00689592 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,9 +216,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDE83A9C2B1F292A0077F279 /* DetailViewController.swift in Sources */,
+				DDF0EB7E2B6CF93B00689592 /* CoreDataService.swift in Sources */,
 				DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */,
 				DD69A2D42B5AA719003959D6 /* MainTabBarController.swift in Sources */,
 				DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */,
+				DDF0EB7C2B6CF65100689592 /* DataModel.xcdatamodeld in Sources */,
+				DDF0EB802B6E4D6600689592 /* BookEntity.swift in Sources */,
 				DDE83A9E2B1F808E0077F279 /* WebViewController.swift in Sources */,
 				DD905C9E2B0D174800622247 /* UIImageViewExtension.swift in Sources */,
 				DD7F18432ABC7A4C004CAF19 /* AppDelegate.swift in Sources */,
@@ -453,6 +465,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DDF0EB7A2B6CF65100689592 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DDF0EB7B2B6CF65100689592 /* BookDataModel.xcdatamodel */,
+			);
+			currentVersion = DDF0EB7B2B6CF65100689592 /* BookDataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD7F18372ABC7A4C004CAF19 /* Project object */;
 }
