@@ -16,18 +16,20 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var favoriteButton: UIButton!
     
     var completion:( () -> Void)?
+    var isBookSaved = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    
     
     func configure(with book: Book){
         bookImageView.downloaded(from: book.bookImage)
         titleLabel.text = book.title
         descriptionLabel.text = book.description
         authorLabel.text = book.author
+        
+        let buttonImageName = isBookSaved ? "star.square.fill" : "star.square"
+        favoriteButton.setImage(UIImage(systemName: buttonImageName), for: .normal)
     }
     
     func configureSaved(with book: BookEntity){
@@ -35,6 +37,8 @@ class TableViewCell: UITableViewCell {
         titleLabel.text = book.title
         descriptionLabel.text = book.discription
         authorLabel.text = book.author
+        
+        favoriteButton.setImage(UIImage(systemName: "star.square.fill"), for: .normal)
     }
     
     @IBAction func favoriteButton(_ sender: Any) {

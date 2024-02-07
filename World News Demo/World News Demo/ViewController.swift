@@ -79,6 +79,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func checkIfBookIsSaved(with title: String) -> Bool {
+        return coreDataService.bookEntities.contains { $0.title == title }
+   }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -88,17 +92,24 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        
         if isSavedBooks {
             cell.configureSaved(with: coreDataService.bookEntities[indexPath.row])
         } else {
+            cell.isBookSaved = checkIfBookIsSaved(with: bookService.booksArray[indexPath.row].title)
             cell.configure(with: bookService.booksArray[indexPath.row])
+            
         }
         cell.completion = {
-            self.coreDataService.saveSelectedBook(
-                author: self.bookService.booksArray[indexPath.row].author,
-                discription: self.bookService.booksArray[indexPath.row].description,
-                image: self.bookService.booksArray[indexPath.row].bookImage,
-                title: self.bookService.booksArray[indexPath.row].title)
+            if self.isSavedBooks {
+                self.coreDataService.deleteBook(title: self.coreDataService.bookEntities[indexPath.row].title)
+            } else {
+                self.coreDataService.saveSelectedBook(
+                    author: self.bookService.booksArray[indexPath.row].author,
+                    discription: self.bookService.booksArray[indexPath.row].description,
+                    image: self.bookService.booksArray[indexPath.row].bookImage,
+                    title: self.bookService.booksArray[indexPath.row].title)
+            }
         }
         return cell
     }

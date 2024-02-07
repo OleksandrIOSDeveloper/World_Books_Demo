@@ -54,6 +54,25 @@ class CoreDataService {
         return []
     }
     
+    func deleteBook(title: String) {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Books")
+        fetchRequest.predicate = NSPredicate(format: "title == %@", title)
+        
+        do {
+            let fetchedBooks = try context.fetch(fetchRequest)
+            for book in fetchedBooks {
+                if let bookObject = book as? NSManagedObject {
+                    context.delete(bookObject)
+                }
+            }
+            
+            try context.save()
+        } catch {
+            print("Не удалось удалить книгу из Core Data: \(error)")
+        }
+    }
+    
     func convertToBookEntities(managedObjects: [NSManagedObject]) {
         for managedObject in managedObjects {
             guard let author = managedObject.value(forKey: "author") as? String,
