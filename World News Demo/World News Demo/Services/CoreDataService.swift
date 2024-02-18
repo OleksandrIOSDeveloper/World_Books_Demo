@@ -34,6 +34,7 @@ class CoreDataService {
         
         do {
             try context.save()
+            updateBookEntities()
         } catch let error as NSError {
             print("Не удалось сохранить выбранную книгу: \(error), \(error.userInfo)")
         }
@@ -45,9 +46,7 @@ class CoreDataService {
         
         do {
             let selectedBooks = try context.fetch(fetchRequest)
-            print(selectedBooks.count)
             return selectedBooks
-            
         } catch let error as NSError {
             print("Не удалось загрузить выбранную книгу: \(error), \(error.userInfo)")
         }
@@ -68,6 +67,7 @@ class CoreDataService {
             }
             
             try context.save()
+            updateBookEntities()
         } catch {
             print("Не удалось удалить книгу из Core Data: \(error)")
         }
@@ -86,5 +86,11 @@ class CoreDataService {
             bookEntities.append(bookEntity)
         }
     }
+    
+    func updateBookEntities() {
+        bookEntities.removeAll()
+        convertToBookEntities(managedObjects: loadSelectedBook())
+    }
+    
 }
 

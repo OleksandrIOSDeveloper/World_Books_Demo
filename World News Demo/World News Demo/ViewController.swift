@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameListLabel: UILabel!
@@ -25,10 +25,20 @@ class ViewController: UIViewController {
         setupUI()
         getBooks()
         coreDataService.convertToBookEntities(managedObjects: coreDataService.loadSelectedBook())
+        NotificationCenter.default.addObserver(self, selector: #selector(tabBarIndexChanged), name: NSNotification.Name(rawValue: "TabBarIndexChanged"), object: nil)
+    }
+    
+    @objc func tabBarIndexChanged() {
+        coreDataService.updateBookEntities()
+        tableView.reloadData()
+    }
+    
+    deinit {
+        // Удаляем наблюдателя при уничтожении ViewController
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func setupUI() {
-        
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         tableView.dataSource = self
@@ -82,7 +92,7 @@ class ViewController: UIViewController {
     
     func checkIfBookIsSaved(with title: String) -> Bool {
         return coreDataService.bookEntities.contains { $0.title == title }
-   }
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -92,24 +102,35 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        
         if isSavedBooks {
             cell.configureSaved(with: coreDataService.bookEntities[indexPath.row])
         } else {
             cell.isBookSaved = checkIfBookIsSaved(with: bookService.booksArray[indexPath.row].title)
             cell.configure(with: bookService.booksArray[indexPath.row])
-            
         }
-        cell.completion = {
-            if self.isSavedBooks {
-                self.coreDataService.deleteBook(title: self.coreDataService.bookEntities[indexPath.row].title)
+        
+        cell.completion = { [weak self] in
+            guard let self = self else { return }
+            if isSavedBooks {
+                let title = self.coreDataService.bookEntities[indexPath.row].title
+                self.coreDataService.deleteBook(title: title)
             } else {
-                self.coreDataService.saveSelectedBook(
-                    author: self.bookService.booksArray[indexPath.row].author,
-                    discription: self.bookService.booksArray[indexPath.row].description,
-                    image: self.bookService.booksArray[indexPath.row].bookImage,
-                    title: self.bookService.booksArray[indexPath.row].title)
+                let book = self.bookService.booksArray[indexPath.row]
+                let isBookSaved = checkIfBookIsSaved(with: book.title)
+                if isBookSaved {
+                    self.coreDataService.deleteBook(title: book.title)
+                    cell.favoriteButton.setImage(UIImage(systemName: "star.square"), for: .normal)
+                } else {
+                    self.coreDataService.saveSelectedBook(
+                        author: book.author,
+                        discription: book.description,
+                        image: book.bookImage,
+                        title: book.title
+                    )
+                    cell.favoriteButton.setImage(UIImage(systemName: "star.square.fill"), for: .normal)
+                }
             }
+            self.tableView.reloadData()
         }
         return cell
     }

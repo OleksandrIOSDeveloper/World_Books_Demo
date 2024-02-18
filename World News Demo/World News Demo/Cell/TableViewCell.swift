@@ -42,7 +42,7 @@ class TableViewCell: UITableViewCell {
     }
     
     @IBAction func favoriteButton(_ sender: Any) {
-        completion!()
+        completion?()
     }
     
 }

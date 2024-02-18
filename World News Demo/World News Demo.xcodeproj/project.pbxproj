@@ -100,9 +100,9 @@
 		DD7F18412ABC7A4C004CAF19 /* World News Demo */ = {
 			isa = PBXGroup;
 			children = (
-				DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */,
 				DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */,
 				DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */,
+				DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */,
 				DD7F18462ABC7A4C004CAF19 /* ViewController.swift */,
 				DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */,
 				DDE83A9D2B1F808E0077F279 /* WebViewController.swift */,

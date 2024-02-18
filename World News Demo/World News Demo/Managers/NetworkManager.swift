@@ -17,13 +17,17 @@ class NetworkManager {
 
     func fetchData(completion: @escaping (Result<BooksResponse, Error>) -> Void) {
         AF.request(baseUrl, method: .get, parameters: parameters).validate().responseDecodable(of: BooksResponse.self) { response in
-        switch response.result {
-        case .success(let booksResponse):
-          completion(.success(booksResponse))
-        case .failure(let error):
-          completion(.failure(error))
+            switch response.result {
+            case .success(let booksResponse):
+                completion(.success(booksResponse))
+            case .failure(let error):
+                if let statusCode = response.response?.statusCode {
+                    print("Status Code: \(statusCode)")
+                }
+                print("Request failed with error: \(error)")
+                completion(.failure(error))
+            }
         }
-      }
     }
     
 }

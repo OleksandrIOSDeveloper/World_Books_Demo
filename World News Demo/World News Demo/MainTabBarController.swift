@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +49,10 @@ class MainTabBarController: UITabBarController {
         
         return vc
     }()
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "TabBarIndexChanged"), object: nil)
+    }
     
 }
 
