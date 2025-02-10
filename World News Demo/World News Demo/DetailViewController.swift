@@ -54,8 +54,8 @@ class DetailViewController: UIViewController {
             self.openWebView(urlString: self.book?.buyLinks[1].url ?? "https://example.com/default")
         }
         
-        let thirdAction: UIAlertAction = UIAlertAction(title: "Buy a book on \(self.book?.buyLinks[2].name.rawValue ?? "")", style: .default) { action -> Void in
-            self.openWebView(urlString: self.book?.buyLinks[2].url ?? "https://example.com/default")
+        let thirdAction: UIAlertAction = UIAlertAction(title: "Buy a book on \(self.book?.buyLinks[3].name.rawValue ?? "")", style: .default) { action -> Void in
+            self.openWebView(urlString: self.book?.buyLinks[3].url ?? "https://example.com/default")
         }
         
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
