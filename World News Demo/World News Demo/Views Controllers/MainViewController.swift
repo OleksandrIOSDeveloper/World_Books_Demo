@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITabBarControllerDelegate {
+class MainViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameListLabel: UILabel!
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         isSavedBooks ? coreDataService.bookEntities.count : bookService.booksArray.count
     }

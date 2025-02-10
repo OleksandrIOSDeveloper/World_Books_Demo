@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD69A2D42B5AA719003959D6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */; };
+		DD2EE2D12D5A900E00F9BF7B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2EE2D02D5A900E00F9BF7B /* MainTabBarController.swift */; };
 		DD7F18432ABC7A4C004CAF19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */; };
 		DD7F18452ABC7A4C004CAF19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */; };
-		DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18462ABC7A4C004CAF19 /* ViewController.swift */; };
+		DD7F18472ABC7A4C004CAF19 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7F18462ABC7A4C004CAF19 /* MainViewController.swift */; };
 		DD7F184A2ABC7A4C004CAF19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7F18482ABC7A4C004CAF19 /* Main.storyboard */; };
 		DD7F184C2ABC7A4E004CAF19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7F184B2ABC7A4E004CAF19 /* Assets.xcassets */; };
 		DD7F184F2ABC7A4E004CAF19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7F184D2ABC7A4E004CAF19 /* LaunchScreen.storyboard */; };
@@ -29,11 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DD2EE2D02D5A900E00F9BF7B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DD7F183F2ABC7A4C004CAF19 /* World News Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World News Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD7F18462ABC7A4C004CAF19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD7F18462ABC7A4C004CAF19 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD7F18492ABC7A4C004CAF19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD7F184B2ABC7A4E004CAF19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD7F184E2ABC7A4E004CAF19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD2EE2CF2D5A8DA000F9BF7B /* Views Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD2EE2D02D5A900E00F9BF7B /* MainTabBarController.swift */,
+				DD7F18462ABC7A4C004CAF19 /* MainViewController.swift */,
+				DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */,
+				DDE83A9D2B1F808E0077F279 /* WebViewController.swift */,
+			);
+			path = "Views Controllers";
+			sourceTree = "<group>";
+		};
 		DD793EE62B07B6470045CDCF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,17 +111,14 @@
 		DD7F18412ABC7A4C004CAF19 /* World News Demo */ = {
 			isa = PBXGroup;
 			children = (
+				DD2EE2CF2D5A8DA000F9BF7B /* Views Controllers */,
 				DD7F18422ABC7A4C004CAF19 /* AppDelegate.swift */,
 				DD7F18442ABC7A4C004CAF19 /* SceneDelegate.swift */,
-				DD69A2D32B5AA719003959D6 /* MainTabBarController.swift */,
-				DD7F18462ABC7A4C004CAF19 /* ViewController.swift */,
-				DDE83A9B2B1F292A0077F279 /* DetailViewController.swift */,
-				DDE83A9D2B1F808E0077F279 /* WebViewController.swift */,
-				DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */,
 				DD905CA72B0E36A400622247 /* Services */,
 				DD905CA42B0E247500622247 /* Managers */,
 				DD793EEB2B07C46A0045CDCF /* Models */,
 				DD793EE62B07B6470045CDCF /* Cell */,
+				DD905C9D2B0D174800622247 /* UIImageViewExtension.swift */,
 				DD7F18482ABC7A4C004CAF19 /* Main.storyboard */,
 				DD7F184B2ABC7A4E004CAF19 /* Assets.xcassets */,
 				DD7F184D2ABC7A4E004CAF19 /* LaunchScreen.storyboard */,
@@ -217,8 +225,8 @@
 			files = (
 				DDE83A9C2B1F292A0077F279 /* DetailViewController.swift in Sources */,
 				DDF0EB7E2B6CF93B00689592 /* CoreDataService.swift in Sources */,
-				DD7F18472ABC7A4C004CAF19 /* ViewController.swift in Sources */,
-				DD69A2D42B5AA719003959D6 /* MainTabBarController.swift in Sources */,
+				DD2EE2D12D5A900E00F9BF7B /* MainTabBarController.swift in Sources */,
+				DD7F18472ABC7A4C004CAF19 /* MainViewController.swift in Sources */,
 				DD905CA02B0E1E3E00622247 /* BooksResponse.swift in Sources */,
 				DDF0EB7C2B6CF65100689592 /* DataModel.xcdatamodeld in Sources */,
 				DDF0EB802B6E4D6600689592 /* BookEntity.swift in Sources */,

@@ -18,8 +18,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     lazy public var initialTabBar: UIViewController = {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController")
-        if let vc = vc as? ViewController {
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        if let vc = vc as? MainViewController {
             vc.isSavedBooks = false
         }
         let title = "Books"
@@ -36,9 +36,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     lazy public var finalTabBar: UIViewController = {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController1 = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        let viewController1 = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         
-        guard let vc = viewController1 as? ViewController else { return UIViewController() }
+        guard let vc = viewController1 as? MainViewController else { return UIViewController() }
         vc.isSavedBooks = true
         
         let defaultImage = UIImage(systemName: "bookmark.square")
