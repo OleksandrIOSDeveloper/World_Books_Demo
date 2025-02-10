@@ -23,7 +23,7 @@ class TableViewCell: UITableViewCell {
     }
     
     func configure(with book: Book){
-        bookImageView.downloaded(from: book.bookImage)
+        bookImageView.downloaded(from: book.bookImage ?? "00")
         titleLabel.text = book.title
         descriptionLabel.text = book.description
         authorLabel.text = book.author

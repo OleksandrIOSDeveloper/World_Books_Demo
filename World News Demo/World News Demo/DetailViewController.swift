@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         buyBookButtonOutlet.layer.cornerRadius = 7
         if let unwrappedBook = book {
-            bookImageView.downloaded(from: unwrappedBook.bookImage)
+            bookImageView.downloaded(from: unwrappedBook.bookImage ?? "00")
             centralLabel.text = unwrappedBook.title
             authorBookLabel.text = unwrappedBook.author
             discriptionBookLabel.text = unwrappedBook.description

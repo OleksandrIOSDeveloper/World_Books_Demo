@@ -124,7 +124,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                     self.coreDataService.saveSelectedBook(
                         author: book.author,
                         discription: book.description,
-                        image: book.bookImage,
+                        image: book.bookImage ?? "00",
                         title: book.title
                     )
                     cell.favoriteButton.setImage(UIImage(systemName: "star.square.fill"), for: .normal)
